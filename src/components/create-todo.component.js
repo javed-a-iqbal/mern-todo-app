@@ -96,7 +96,7 @@ export default class CreateTodo extends Component {
                                 checked={this.state.todo_priority==='Low'}
                                 onChange={this.onChangeToDopriority}
                                 />
-                                <label className="">Low</label>
+                                <label className="form-check-label">Low</label>
                         </div>
 
 
@@ -109,7 +109,7 @@ export default class CreateTodo extends Component {
                                 checked={this.state.todo_priority==='Medium'}
                                 onChange={this.onChangeToDopriority}
                                 />
-                                <label className="">Medium</label>
+                                <label className="form-check-label">Medium</label>
                         </div>
 
                         <div className="form-check form-check-inline">
@@ -121,7 +121,7 @@ export default class CreateTodo extends Component {
                                 checked={this.state.todo_priority==='High'}
                                 onChange={this.onChangeToDopriority}
                                 />
-                                <label className="">High</label>
+                                <label className="form-check-label">High</label>
                         </div>
 
 
