@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import axious from 'axios';
+import Axios from 'axios';
 
 export default class CreateTodo extends Component {
     constructor(props){
@@ -43,7 +45,15 @@ export default class CreateTodo extends Component {
         console.log(`Todo Priorirty ${this.state.todo_priority}`);
         console.log(`Todo Completed ${this.state.todo_completed}`);
 
-        
+        const newTodo={
+            todo_description: this.state.todo_description,
+            todo_responsible:this.state.todo_responsible,
+            todo_priority:this.state.todo_priority,
+            todo_completed:this.state.todo_completed
+        }
+        Axios.post('http://localhost:4000/todos/add',newTodo)
+        .then(res=> console.log(res.data))
+
         this.setState({
             todo_description:'',
             todo_responsible:'',
@@ -111,7 +121,7 @@ export default class CreateTodo extends Component {
                                 checked={this.state.todo_priority==='High'}
                                 onChange={this.onChangeToDopriority}
                                 />
-                                <label className="">Low</label>
+                                <label className="">High</label>
                         </div>
 
 
